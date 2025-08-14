@@ -157,7 +157,7 @@
 
 <footer>
   Desenvolvido para fins técnicos de SST | &copy; 2025
-             Desenvolvido por Vytola
+             Desenvolvido por Vytor Suporte Técnico
 </footer>
 
 <script>
