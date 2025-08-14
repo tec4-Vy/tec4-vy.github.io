@@ -161,15 +161,21 @@
 </footer>
 
 <script>
-  function mostrar(secao) {
-    document.querySelectorAll("section").forEach(el => el.classList.remove("active"));
-    document.getElementById(secao).classList.add("active");
+  const senhaCorreta = "1234"; // altere para a senha que você quiser
+const secoesProtegidas = ["riscos", "treinamento", "riscos_empresas"];
+
+function mostrar(secao) {
+  // Se a seção for protegida, pede senha
+  if (secoesProtegidas.includes(secao)) {
+    const senhaDigitada = prompt("Digite a senha para acessar esta seção:");
+    if (senhaDigitada !== senhaCorreta) {
+      alert("Senha incorreta! Acesso negado.");
+      return;
+    }
   }
-  function copiarTexto(texto) {
-    navigator.clipboard.writeText(texto).then(() => {
-      alert('Copiado: ' + texto);
-    });
-  }
+  document.querySelectorAll("section").forEach(el => el.classList.remove("active"));
+  document.getElementById(secao).classList.add("active");
+}
 
   /* -------- EPIs (do PDF) -------- */
 const epis = [
